@@ -1,0 +1,30 @@
+{
+  "name": "site-dhandha",
+  "version": "1.0.0",
+  "description": "Production-ready CLI compiler engine generating schema-driven CRO landing pages for high-ticket developers.",
+  "type": "module",
+  "bin": {
+    "site-dhandha": "./bin/index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "nextjs",
+    "tailwind",
+    "cro",
+    "cli",
+    "code-generator",
+    "developer-tools",
+    "landing page",
+    "automation"
+  ],
+  "author": "Suvir Atrey",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "inquirer": "^9.3.2",
+    "node-machine-id": "^1.1.1",
+    "open": "^10.1.0"
+  }
+}

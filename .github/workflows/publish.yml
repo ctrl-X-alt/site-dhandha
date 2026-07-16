@@ -1,0 +1,30 @@
+name: Publish Package to NPM Registry
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  audit-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code Repository
+        uses: actions/checkout@v4
+
+      - name: Initialize Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npmjs.org'
+
+      - name: Clean Install Client Dependencies
+        run: npm ci
+
+      - name: Verify Code Quality Compliance
+        run: |
+          node ./bin/index.js --help
+
+      - name: Publish Alpha Package to Public Registry
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
