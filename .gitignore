@@ -13,3 +13,4 @@ Thumbs.db
 # Local development / Testing files
 .local
 dist/
+.env
