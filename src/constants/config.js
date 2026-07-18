@@ -5,7 +5,7 @@
 export const CONFIG_CONSTANTS = {
   API_VERSION_TARGET: 'v1',
   LOCAL_SERVER_API_ENDPOINTS: 'http://localhost:5000/v1',
-  PRODUCTION_SERVER_API_ENDPOINTS: 'https://yourplatform.com',
+  PRODUCTION_SERVER_API_ENDPOINTS: 'https://site-dhandha-back.onrender.com',
   MAX_INPUT_STRING_THRESHOLD_LIMIT: 200
 };
 
