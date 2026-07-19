@@ -106,13 +106,13 @@ export async function handlePageGeneration() {
   };
 
   try {
-    // 4. Fire network request to your private backend production server
-    const endpointTarget = CONFIG_CONSTANTS.PRODUCTION_SERVER_API_ENDPOINTS;
+    // FIX: Targets the standardized constant directly without hardcoding path extensions
+    const baseUri = CONFIG_CONSTANTS.PRODUCTION_SERVER_API_ENDPOINTS;
 
-    const response = await axios.post(`${endpointTarget}/generate`, structuredPayload, {
+    const response = await axios.post(`${baseUri}/generate`, structuredPayload, {
       headers: {
         'Authorization': `Bearer ${token}`,
-        'X-Device-Fingerprint': hardwareFingerprint,
+        'x-device-fingerprint': hardwareFingerprint, // Explicit matching lowercase key for rateLimiter.ts
         'Content-Type': 'application/json'
       }
     });
