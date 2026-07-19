@@ -21,7 +21,8 @@ export async function handleCliLogin() {
   console.log('[INFO] Contacting authorization gateway engine to secure authentication paths...');
   
   try {
-    const baseUri = CONFIG_CONSTANTS.LOCAL_SERVER_API_ENDPOINTS;
+    // Point this to your live Render API endpoints matrix
+    const baseUri = `${CONFIG_CONSTANTS.PRODUCTION_SERVER_API_ENDPOINTS}/v1`;
     
     // Trigger real long polling handshake channel context on backend gateway
     const sessionInitiationResponse = await axios.post(`${baseUri}/auth/session`, {
